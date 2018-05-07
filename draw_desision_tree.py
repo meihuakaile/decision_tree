@@ -56,8 +56,8 @@ def draw_tree(node_text, parent_pt, center_parent, key, had_draw_leafnode):
         plot_text(parent_pt, center_parent, key)
         plot_node(next_key, parent_pt, center_parent, leafNode)
         for item in value.keys():
-            this_leafnum_node = get_leafnode_num(value[item], 0)
-            next_xind = had_draw_leafnode * x_off + (this_leafnum_node - 1) * x_off / 2
+            this_leafnum = get_leafnode_num(value[item], 0)
+            next_xind = had_draw_leafnode * x_off + (this_leafnum - 1) * x_off / 2
             had_draw_leafnode = draw_tree(value[item], center_parent, (next_xind, center_parent[1]-y_off), item, had_draw_leafnode)
         return had_draw_leafnode
 
